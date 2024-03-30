@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 2</title>
+</head>
+<body>
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+    <!-- <ul class="newTN">
+        <li>This is Love</li>
+    </ul>
+    <ul class="names5">
+        <li>irfan</li>
+    </ul> -->
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li')
+        li.innerHTML= `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("Python")
+    addLanguage("CSS")
+
+    function addoptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector(".language").appendChild(li)
+    }
+    addoptiLanguage("MERN Stack")
+    addoptiLanguage("HTML")
+
+
+    // const newflng = document.querySelector('li:nth-child(2)')    //its work
+    // newflng.innerHTML = "new Advance Python"
+    
+    const newflng = document.querySelector('li:nth-child(2)')
+    const newpyt = document.createElement('li')
+    newpyt.innerText= "This is Advance Python"
+    newflng.replaceWith(newpyt)
+
+    const mLang = document.querySelector('li:nth-child(4)')
+    const NewmLang = document.createElement('li')
+    NewmLang.innerText= "This is advance MERN Stack"
+    mLang.replaceWith(NewmLang)
+
+    const langcss = document.querySelector('li:nth-child(3)')
+    const newlangcss = document.createElement('li')
+    newlangcss.innerText= "This is also new Advance CSS"
+    langcss.replaceWith(newlangcss)
+
+    const htmlLang = document.querySelector('li:first-child')
+    htmlLang.innerHTML= "This is new advance HTML"
+
+ //++++++++++++++++  Last Language Remove   ++++++++++++++++++++++++++
+    const lstLangRemv = document.querySelector('li:last-child')
+    lstLangRemv.remove()
+
+    
+</script>
+</html>
